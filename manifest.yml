@@ -1,0 +1,11 @@
+---
+applications:
+- name: jacoco-tcpserver
+  memory: 768M
+  instances: 1
+  health-check-type: process
+  path: ./target/tcp-server-1.0-SNAPSHOT.jar
+  buildpacks:
+  - java_buildpack_offline
+  routes:
+  - route: jacoco-tcpserver.apps.internal
